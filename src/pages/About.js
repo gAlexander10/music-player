@@ -5,8 +5,17 @@ import {Links} from 'react-router-dom';
 function About() {
   return (
     <div>
-        <h1 className="aboutHeader">About</h1>
-        <style>{'body { background-color: #100F0F; }'}</style>
+      <div className="aboutContainer">
+        
+        <div className="aboutHeader">
+        <h1 className="aboutHeaderText">About</h1>
+        </div>
+        
+        <div className="aboutBody">
+        <h2>Body</h2>
+        </div>
+    
+      </div>
     </div>
   );
 }
