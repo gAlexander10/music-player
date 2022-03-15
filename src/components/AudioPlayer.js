@@ -1,12 +1,22 @@
 import React,{ useStatem, useRef, useEffect} from 'react';
 import '../styles/audioplayer.css';
-import '../assets/Test.mp3'
+import song from '../assets/Test.mp3';
 
 
 function AudioPlayer() {
   return (
     <div>
-        <h1>AudioPlayer</h1>
+      <div className="audioPlayerContainer">
+        
+        <div className="audioMiddle">
+          
+          <audio controls>
+            <source src={song} type="audio/mp3"/>
+          </audio>
+
+        </div>
+
+      </div>
     </div>
   );
 }

@@ -1,5 +1,3 @@
-
-
 .colors{
     --primary: #FF008A;
     --secondary: #FFFFFF;
@@ -25,18 +23,13 @@
     text-align: center;
 }
 
-.checkBorder{ 
-    border: 3px solid green; 
-    background-color: white; 
-}
-
 .container{
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    
+
     height:100vh;
     width:100vw;
     display: grid;
@@ -73,8 +66,6 @@
 }
 
 
-
-
 .col{
     text-align: center;
     border: 3px solid green;
@@ -82,13 +73,13 @@
 .containterBackground{
     background: greenyellow;
     height: 250px;
-  width: 250px; 
+    width: 250px; 
 }
 .FixedHeightContainer
 {
-  float: center;
-  height: 250px;
-  width: 250px;  
+    float: center;
+    height: 250px;
+    width: 250px;  
 
 }
 .Content{
