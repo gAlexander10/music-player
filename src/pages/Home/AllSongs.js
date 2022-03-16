@@ -3,8 +3,11 @@ import '../../styles/homestyle.css'
 
 function AllSongs() {
   return (
-    <div>
+    <div className = 'songsContainer'>
         <h1 className="audioListTitleText">All Songs</h1>
+        <div className = 'songsStorageBox'>
+          10000
+        </div>
     </div>
   )
 }

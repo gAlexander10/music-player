@@ -13,16 +13,6 @@
     font-size: 50px;
 }
 
-.audioListTitleText{
-    --primary: #FF008A;
-    --secondary: #FFFFFF;
-    color: var(--secondary);
-    font-family: 'Nunito', sans-serif;
-    font-weight: 800;
-    font-size: 30px;
-    text-align: center;
-}
-
 .container{
     position: fixed;
     top: 0;
@@ -64,6 +54,38 @@
     border-top: 2px solid #282828;
     /*background-color: green;*/
 }
+
+.songsContainer{
+    display: grid;
+    gap: 0px;
+    height: 530px;
+    width: 500px;
+    grid-template-rows: 100px 500px;
+    grid-template-columns: 25px 1fr 25px;
+    background-color: yellow;
+}
+
+.audioListTitleText{
+    --primary: #FF008A;
+    --secondary: #FFFFFF;
+    color: var(--secondary);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    text-align: center;
+    background-color: blue;
+    grid-row: 1;
+    grid-column: 1/-1;
+}
+
+.songsStorageBox{
+    background-color: grey;
+    width: 450px;
+    height: 400px;
+    grid-row: 2;
+    grid-column: 2;
+}
+
 
 
 .col{
