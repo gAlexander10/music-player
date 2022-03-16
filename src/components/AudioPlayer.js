@@ -1,7 +1,6 @@
-import React,{ useStatem, useRef, useEffect} from 'react';
+import React,{ useState, useRef, useEffect} from 'react';
 import '../styles/audioplayer.css';
 import song from '../assets/Test.mp3';
-
 
 function AudioPlayer() {
   return (
