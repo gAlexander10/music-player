@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .colors{
     --primary: #FF008A;
     --secondary: #FFFFFF;
@@ -30,6 +35,10 @@
 }
 
 .header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     grid-row: 1;
     grid-column: 2/4;
     /*background-color: yellow;*/
@@ -57,12 +66,14 @@
 
 .songsContainer{
     display: grid;
-    gap: 0px;
+    margin: 0;
+    padding: 0;
+    border-radius: 0px;
     height: 530px;
     width: 500px;
-    grid-template-rows: 100px 500px;
+    grid-template-rows: 40px 500px;
     grid-template-columns: 25px 1fr 25px;
-    background-color: yellow;
+    /*background-color: yellow;*/
 }
 
 .audioListTitleText{
@@ -73,40 +84,21 @@
     font-weight: 800;
     font-size: 30px;
     text-align: center;
-    background-color: blue;
     grid-row: 1;
     grid-column: 1/-1;
+    /*background-color: blue;*/
 }
 
 .songsStorageBox{
-    background-color: grey;
     width: 450px;
-    height: 400px;
+    height: 500px;
     grid-row: 2;
     grid-column: 2;
+    background-color: #1B1B1B;
 }
 
-
-
-.col{
-    text-align: center;
-    border: 3px solid green;
-}
-.containterBackground{
-    background: greenyellow;
-    height: 250px;
-    width: 250px; 
-}
-.FixedHeightContainer
-{
-    float: center;
-    height: 250px;
-    width: 250px;  
-
-}
-.Content{
-    height:224px;
-    overflow:auto;
+.storageBoxText{
     font-family: 'Nunito', sans-serif;
-    color: #FF008A;
+    font-weight: 300;
+    color: white;
 }

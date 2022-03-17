@@ -1,14 +1,14 @@
 .audioPlayerContainer{
-    grid-template-rows: 120px;
+    display: grid;
+    height: 120px;
+    width: 100vw;
+    grid-template-rows: 60px 60px;
     grid-template-columns: 100px 1fr 100px;
 }
 
 .audioMiddle{
-    position: fixed;
-
     height:120px;
     width:100vw;
-    display: grid;
     grid-row: 1;
     grid-column: 2/3;
 }

@@ -6,7 +6,7 @@ function RecentlyPlayed() {
     <div className = 'songsContainer'>
         <h1 className="audioListTitleText">Recently Played</h1>
         <div className = 'songsStorageBox'>
-          10000
+          <div className = 'storageBoxText'>Artist - Song Title</div>
         </div>
     </div>
   )
