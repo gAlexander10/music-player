@@ -100,5 +100,14 @@
 .storageBoxText{
     font-family: 'Nunito', sans-serif;
     font-weight: 300;
+    padding: 5px;
+    padding-left: 20px;
     color: white;
+}
+
+.storageBoxText:hover{
+    color: #FF008A;
+    cursor: pointer;
+    border-top: 3px solid #282828;
+    border-bottom: 3px solid #282828;
 }
