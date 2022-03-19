@@ -1,3 +1,7 @@
+import React from 'react';
+import '../styles/homestyle.css'
+
+function SongList(){
 let songs = [
     {
         artist: 'Voodoo Suite',
@@ -15,7 +19,7 @@ let songs = [
         path: '../assets/03 The Trumpeteers - Little Wooden Church.mp3'
     },
     {
-        artist: 'jackson F. Smith',
+        artist: 'Jackson F. Smith',
         title: 'Cantina Rag',
         path: '../assets/04 Jackson F. Smith - Cantina Rag.mp3'
     },
@@ -25,7 +29,7 @@ let songs = [
         path: '../assets/05 Studio Noir - Our Little Hearts Like Saturn.mp3'
     },
     {
-        artist: 'Teddy adn Marge',
+        artist: 'Teddy and Marge',
         title: 'Dark Eyes',
         path: '../assets/06 Teddy and Marge - Dark Eyes.mp3'
     },
@@ -60,7 +64,7 @@ let songs = [
         path: '../assets/12 Crowander - Humbug.mp3'
     },
     {
-        artist: 'marcos H. Bolanos',
+        artist: 'Marcos H. Bolanos',
         title: 'Rain-Soaked Window',
         path: '../assets/13 Marcos H. Bolanos - Rain-Soaked Window.mp3'
     },
@@ -75,5 +79,8 @@ let songs = [
         path: '../assets/15 Monolog Rockstars - At The Restaurant.mp3'
     }
 ]
+    const songList = songs.map(song => (<div className='storageBoxText'>{song.artist} - {song.title}</div>))
+    return <div>{songList}</div>
+}
 
-export { songs };
+export default SongList;
