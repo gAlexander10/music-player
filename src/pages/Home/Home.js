@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaBars } from 'react-icons/fa';
 import AudioPlayer from '../../components/AudioPlayer';
 import AllSongs from './AllSongs';
 import RecentlyPlayed from './RecentlyPlayed';
@@ -14,6 +15,8 @@ function Home() {
         <h1 className="homeHeader">Music Player</h1>
         </div>
         
+        <FaBars className="menuIcon" />
+
         <div className="allSongs">
         <AllSongs />
         </div>
