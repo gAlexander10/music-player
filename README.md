@@ -1,7 +1,7 @@
-# CSCE 3110 Final project **Music Player**
+# CSCE 3110 Final project (*Music Player*)
 
----
-## Class Info
+
+### Class Info
  ```json
 {
   "class": "CSCE3110",
@@ -15,16 +15,14 @@
 * Alex Martinez
 * Cambry King
 
-# Tyler Adam Martinez
 ### Responsibilities Listed
+#### Tyler Adam Martinez
 * pt
 
-# Alex Martinez
-### Responsibilities Listed
+#### Alex Martinez
 * pt
 
-# Cambry King
-### Responsibilities Listed
+#### Cambry King
 * pt
 
 
@@ -42,10 +40,10 @@
 
 ---
 
-# Known Bugs or Problems
-## A list of any features that you did not implement
+### Known Bugs or Problems
+#### A list of any features that you did not implement
 * N/A
 
-## Things that you know are not working correctly.
+#### Things that you know are not working correctly.
 * N/A
 
