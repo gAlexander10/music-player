@@ -1,17 +1,51 @@
-# CSCE 3110 Project
+# CSCE 3110 Final project **Music Player**
 
-## Team
+---
+## Class Info
+ ```json
+{
+  "class": "CSCE3110",
+  "team name": "N/A",
+}
+```
+---
+
+### Team Memebers
 * Tyler Adam Martinez
 * Alex Martinez
 * Cambry King
 
-## Required to run
+# Tyler Adam Martinez
+### Responsibilities Listed
+* pt
+
+# Alex Martinez
+### Responsibilities Listed
+* pt
+
+# Cambry King
+### Responsibilities Listed
+* pt
+
+
+---
+
+### Required to run
 * Node.js
 * create-react-app
 
+### Hold to run the project
+1. Go to the project's root directory
+2. Run the terminal command: `npm start`
+3. Go to your default web browser
+4. Open [http://localhost:3000](http://localhost:3000) to view the project in your default web browser
 
-## Hold to run the project
-In the project directory, you can run: `npm start`
-To run the app in the development mode
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser
+---
+
+# Known Bugs or Problems
+## A list of any features that you did not implement
+* N/A
+
+## Things that you know are not working correctly.
+* N/A
 
