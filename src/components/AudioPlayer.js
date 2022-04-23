@@ -16,7 +16,7 @@ function AudioPlayer() {
           <TiMediaFastForward className="rightArrow"/>
         
         <div className="audioMiddle">
-          <audio controls>
+          <audio controls autoplay>
             <source src={song} type="audio/mp3"/>
           </audio>
         </div>

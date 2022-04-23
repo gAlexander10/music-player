@@ -8,7 +8,7 @@ function AllSongs() {
         <h1 className="audioListTitleText">All Songs</h1>
         <div className = 'songsStorageBox'>
           <div>
-        <SongList/>
+            <SongList/>
           </div>
         </div>
     </div>
