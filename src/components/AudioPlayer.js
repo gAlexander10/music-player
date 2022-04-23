@@ -2,6 +2,7 @@ import React,{ useState, useRef, useEffect} from 'react';
 import { TiMediaRewind, TiMediaFastForward } from 'react-icons/ti';
 import '../styles/audioplayer.css';
 import song from '../assets/Test.mp3';
+import playlist  from "../data_structures/playlist.js";
 
 function AudioPlayer() {
   return (
