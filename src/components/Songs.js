@@ -1,8 +1,7 @@
 import React from 'react';
 import '../styles/homestyle.css'
 
-function SongList(){
-let songs = [
+export let songs = [
     {
         id: "0",
         artist: 'Voodoo Suite',
@@ -94,7 +93,11 @@ let songs = [
         path: '../assets/15 Monolog Rockstars - At The Restaurant.mp3'
     }
 ]
-    const songList = songs.map(song => (<div className='storageBoxText'>{song.artist} - {song.title}</div>))
+ 
+
+
+function SongList(){
+   const songList = songs.map(song => (<div className='storageBoxText'>{song.artist} - {song.title}</div>))
     return <div>{songList}</div>
 }
 
