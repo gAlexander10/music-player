@@ -95,18 +95,19 @@ let songs = [
     }
 ]
 
-function buttonAction(){
-    // Functionality of buttonAction
-    //
-    // 1. Update CurrentSong on linked list -- UpdateCurrent(id)
-    // 2. Push Song Pressed onto Stack --  Push(id)
-    //
-    console.log('Button Has Been Pressed');
-}
-
 function SongList(){
+
+    const buttonAction = (id) => {
+        // Functionality of buttonAction
+        //
+        // 1. Update CurrentSong on linked list -- UpdateCurrent(id)
+        // 2. Push Song Pressed onto Stack --  Push(id)
+        //
+        console.log('Button ' + id + ' Has Been Pressed');
+    }
+
     const songList = songs.map((song) => (
-    <div onClick={buttonAction} key = {songs.id} className='storageBoxText' >
+    <div key = {song.id} onClick={()=> buttonAction(song.id)} className='storageBoxText' >
         {song.artist} - {song.title}
     </div>))
     return <div>{songList}</div>
