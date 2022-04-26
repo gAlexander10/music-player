@@ -12,14 +12,14 @@ function AudioPlayer() {
   
   const Previous = () => {
     // 1. Make the previous song the current song in the linked list -- Playlist.prev
-    //Playlist.prev();
+    Playlist.prev();
     // 2. Push previous Song onto Stack --  Push(id)
     console.log('Previous Button Has been pushed');
   }
 
   const Next = () =>{ 
     // 1. Make the next song the current song in the linked list -- Playlist.next
-    //Playlist.next();
+    Playlist.next();
     // 2. Push next Song onto Stack --  Push(id)
     console.log('Next Button Has been pushed');
   }
