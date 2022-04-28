@@ -1,7 +1,13 @@
+import { songs } from '../components/Songs'
+
 class Playlist {
   constructor(array, index) {
     this.array = array;
     this.index = index;
+  }
+
+  updateCurrent(id){
+    this.index = id
   }
 
   current() {
