@@ -1,37 +1,29 @@
-class RecentlyPlayed{
+class RecentlyPlayed {
     constructor()
     {
         this.item= [];
     } 
 
-    push(element){ 
-        for(var i=0; i<15; i++){
-            if(this.item[i] == element) 
+    push(element){ //Adds new element to the array
+        for(var i=0; i<15; i++){  //Checks if the contents of the array appear somewhere within the array
+            if(this.item[i] == element) //If a similar element is found, it is deleted
                this.item.splice(i, 1);
         }
-        if(this.item.length==15){ 
+        if(this.item.length==15){ //If there are more than 15 elements, the oldest one is deleted
             this.item.splice(0, 1);
         }
         this.item.push(element);
     }
 
-    /*pop(){
-        if(this.item.length==0)
-            return "Underflow";
-        return this.item.pop()
+    current() //Returns the leghth of the stack
+    {
+        return this.item.length;
     }
 
-    splice(element){
-        if(this.item.length==0)
-            return "Underflow";
-        this.item.splice(element, 1);
-    }
-*/
-    print(element)
+    print(element) //Returns specific element
     {
         return this.item[element];
     }
-
 }
 
 export default RecentlyPlayed;
