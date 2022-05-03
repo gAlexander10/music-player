@@ -7,22 +7,27 @@ function AudioPlayer() {
   let mod = require("./Songs.js");
   let my_playlist = new playlist(mod.songs , 0);
 
-  // useState create source state based on my_playlist.current()
-  // useEffect()  <- use this to detect the changes to the playlist.current() item
+  let [songTitle, setSongTitle] = useState(my_playlist.current().title);
+  let [source, setSource] = useState(my_playlist.current().path);
+  useEffect( () => {
+    setSource(my_playlist.current().path);
+    setSongTitle(my_playlist.current().title);
+  }, [my_playlist]);
+
   return (
     <div>
       <div className="audioPlayerContainer">
 
         <div className="abovePlayer">
-          <TiMediaRewind className="leftArrow"/>
-          <div className="currentSong">
-            { my_playlist.current().title }
-          </div>
-          <TiMediaFastForward className="rightArrow"/>
+          <TiMediaRewind className="leftArrow" onClick={ my_playlist.prev() } />
+            <div className="currentSong">
+              { songTitle }
+            </div>
+          <TiMediaFastForward className="rightArrow" onClick={ my_playlist.next() }/>
 
         <div className="audioMiddle">
           <audio controls autoplay>
-            <source src={my_playlist.current()} type="audio/mp3"/>
+            <source src={ source } type="audio/mp3"/>
           </audio>
         </div>
 
