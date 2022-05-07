@@ -1,34 +1,55 @@
-import React,{ useState, useRef, useEffect} from 'react';
 import { TiMediaRewind, TiMediaFastForward } from 'react-icons/ti';
+import { useState, useEffect } from 'react';
 import '../styles/audioplayer.css';
-import playlist  from "../data_structures/playlist.js";
+import playlist from '../data_structures/playlist.js';
 
-function AudioPlayer() {
-  let mod = require("./Songs.js");
-  let my_playlist = new playlist(mod.songs , 0);
+function AudioPlayer(props) {
+  let [songPath, setSongPath] = useState(props.songPath);
+  let [songTitle, setSongTitle] = useState(props.songTitle);
+  let [songArtist, setSongArtist] = useState(props.songArtist);
 
-  // useState create source state based on my_playlist.current()
-  // useEffect()  <- use this to detect the changes to the playlist.current() item
+  let my_playlist = new playlist(props.playlist);
+
+  let [index, setIndex] = useState(0);
+  useEffect(() => {
+    if (index > props.playlist.length -1) {
+      setIndex(0);
+    } else if (index < 0) {
+      setIndex(props.playlist.length - 1);
+    }
+  }, [index]);
+
   return (
-    <div>
-      <div className="audioPlayerContainer">
-
-        <div className="abovePlayer">
-          <TiMediaRewind className="leftArrow"/>
+  <div>
+    <div className="audioPlayerContainer">
+      <div className="abovePlayer">
+        <TiMediaRewind className="leftArrow" onClick={() => { 
+          console.log(props.playlist);
+          setIndex(index - 1);
+          console.log(index);
+          console.log(props.playlist.at(index).title);
+          setSongTitle(props.playlist.at(index).title);
+        }} />
           <div className="currentSong">
-            { my_playlist.current().title }
+            { songTitle }
           </div>
-          <TiMediaFastForward className="rightArrow"/>
+        <TiMediaFastForward className="rightArrow" onClick={() => { 
+          console.log(props.playlist);
+          setIndex(index + 1);
+          console.log(index);
+          console.log(props.playlist.at(index).title);
+          setSongTitle(props.playlist.at(index).title);
+        }}/>
+      <div className="audioMiddle">
+        <audio controls> 
+          <source src={props.songPath} type="audio/mp3"/>
+          Your browser does not support the audio element.
+        </audio>
+      </div>
 
-        <div className="audioMiddle">
-          <audio controls autoplay>
-            <source src={my_playlist.current()} type="audio/mp3"/>
-          </audio>
-        </div>
-
-        </div>
       </div>
     </div>
+  </div>
   );
 }
 
