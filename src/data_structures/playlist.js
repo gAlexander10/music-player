@@ -4,6 +4,10 @@ class Playlist {
     this.index = index;
   }
 
+  add(new_element) {
+    this.array.push(new_element);
+  }
+
   current() {
     return this.array[this.index]
   }
