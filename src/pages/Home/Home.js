@@ -13,13 +13,13 @@ function Home() {
           id: "0",
           artist: 'Voodoo Suite',
           title: 'Little Grass Shack',
-          path: '../../assets/01 Voodoo Suite - Little Grass Shack.mp3'
+          path: '../assets/01 Voodoo Suite - Little Grass Shack.mp3'
       },
       {
           id: "1",
           artist: 'Ken Hamm',
           title: 'Buckbreak',
-          path: '../.../assets/02 Ken Hamm - Buckbreak.mp3'
+          path: '../assets/02 Ken Hamm - Buckbreak.mp3'
       },
       {
           id: "2",

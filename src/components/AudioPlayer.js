@@ -1,10 +1,8 @@
-import React,{ useState, useRef, useEffect} from 'react';
 import { TiMediaRewind, TiMediaFastForward } from 'react-icons/ti';
 import '../styles/audioplayer.css';
-//import playlist  from "../data_structures/playlist.js";
+
 
 function AudioPlayer(props) {
-
   return (
     <div>
       <div className="audioPlayerContainer">
@@ -16,8 +14,9 @@ function AudioPlayer(props) {
           <TiMediaFastForward className="rightArrow" onClick={() => { console.log("my_playlist.next()"); }}/>
 
         <div className="audioMiddle">
-          <audio controls autoPlay>
-            <source src={ props.songPath } type="audio/mp3"/>
+          <audio controls> 
+            <source src={props.songPath} type="audio/mp3"/>
+            Your browser does not support the audio element.
           </audio>
         </div>
 
