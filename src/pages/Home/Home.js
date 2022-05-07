@@ -138,7 +138,7 @@ function Home() {
         </div>
 
         <div className="recentlyPlayed" >
-        <RecentlyPlayed songPath={songPath} songTitle={songTitle} songArtist={songArtist}/>
+        <RecentlyPlayed playlist={queue} />
         </div>
 
         <div className="footer">
