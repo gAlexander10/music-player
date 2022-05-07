@@ -1,10 +1,10 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa';
 import AudioPlayer from '../../components/AudioPlayer';
 import RecentlyPlayed from './RecentlyPlayed';
+import playlist from '../../data_structures/playlist';
 import '../../styles/homestyle.css';
-
 
 
 function Home() {
@@ -104,6 +104,7 @@ function Home() {
   let songsJSX = songs.map((song) => { 
     return( 
       <div className='storageBoxText' key={song.id} value={song.path} onClick={() => {
+        enqueue( array => [...array, song]);
         setSongTitle(song.title);
         setSongArtist(song.artist);
         setSongPath(song.path);
@@ -112,10 +113,11 @@ function Home() {
       </div>); 
   });
 
-
   let [songPath, setSongPath] = useState(songs[0].path);
   let [songTitle, setSongTitle] = useState(songs[0].title);
   let [songArtist, setSongArtist] = useState(songs[0].artist);
+  let [queue, enqueue] = useState([]);
+
   return (
     <div>
       <div className="container">
@@ -140,7 +142,7 @@ function Home() {
         </div>
 
         <div className="footer">
-        <AudioPlayer songPath={songPath} songTitle={songTitle} songArtist={songArtist}/>
+        <AudioPlayer playlist={queue} songPath={songPath} songTitle={songTitle} songArtist={songArtist}/>
         </div>
 
         <style>{'body { background-color: #100F0F; }'}</style>
