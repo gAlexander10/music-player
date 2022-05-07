@@ -95,7 +95,6 @@ export let songs = [
 ]
  
 
-
 function SongList(){
    const songList = songs.map(song => (<div className='storageBoxText' key={song.id} value={song.path}>{song.artist} - {song.title}</div>))
     return (<div>{songList}</div>)
