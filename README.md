@@ -21,7 +21,7 @@
 
 #### Alex Martinez
 * Build User Interface
-* SrumbMaster
+* ScrumMaster
 
 #### Cambry King
 * Display the Queue to the screen
