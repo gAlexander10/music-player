@@ -1,18 +1,16 @@
-This github repository features materials protected by the Fair Use guidelines of Section 107 of the Copyright Act. All rights reserved to the copyright owners.
-
 # CSCE 3110 Final project (*Music Player*)
 
 
 ### Class Info
  ```json
-{
+
   "class": "CSCE3110",
   "team name": ["Tyler Adam Martinez", "Alex Martinez", "Cambry King"],
-}
+
 ```
 ---
 
-### Team Memembers
+### Team Members
 * Tyler Adam Martinez
 * Alex Martinez
 * Cambry King
@@ -49,4 +47,3 @@ This github repository features materials protected by the Fair Use guidelines o
 
 #### Things that you know are not working correctly.
 * The Audio Player does not play the correct audio file. 
-
