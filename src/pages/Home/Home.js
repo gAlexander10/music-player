@@ -1,100 +1,99 @@
 import React from 'react';
-import { useState, useMemo, useEffect } from 'react';
+import { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import AudioPlayer from '../../components/AudioPlayer';
 import RecentlyPlayed from './RecentlyPlayed';
-import playlist from '../../data_structures/playlist';
 import '../../styles/homestyle.css';
 
 
 function Home() {
   let songs = [
       {
-          id: "0",
+          id: 0,
           artist: 'Voodoo Suite',
           title: 'Little Grass Shack',
           path: '../assets/01 Voodoo Suite - Little Grass Shack.mp3'
       },
       {
-          id: "1",
+          id: 1,
           artist: 'Ken Hamm',
           title: 'Buckbreak',
           path: '../assets/02 Ken Hamm - Buckbreak.mp3'
       },
       {
-          id: "2",
+          id: 2,
           artist: 'The Trumpeteers',
           title: 'Litter Wooden Church',
           path: '../assets/03 The Trumpeteers - Little Wooden Church.mp3'
       },
       {
-          id: "3",
+          id: 3,
           artist: 'Jackson F. Smith',
           title: 'Cantina Rag',
           path: '../assets/04 Jackson F. Smith - Cantina Rag.mp3'
       },
       {
-          id: "4",
+          id: 4,
           artist: 'Studio Noir',
           title: 'Our Little Hearts Like Saturn',
           path: '../assets/05 Studio Noir - Our Little Hearts Like Saturn.mp3'
       },
       {
-          id: "5",
+          id: 5,
           artist: 'Teddy and Marge',
           title: 'Dark Eyes',
           path: '../assets/06 Teddy and Marge - Dark Eyes.mp3'
       },
       {
-          id: "6",
+          id: 6,
           artist: 'Hr jothipala',
           title: 'Ran Eta Pota Ridee Hawadi',
           path: '../assets/07 HR Jothipala - Ran Eta Pota Ridee Hawadi.mp3'
       },
       {
-          id: "7",
+          id: 7,
           artist: 'The Anchorites',
           title: 'Kingsfold',
           path: '../assets/08 The Anchorites - Kingsfold(untrad.).mp3'
       },
       {
-          id: "8",
+          id: 8,
           artist: 'Ludwigs Steirische Gaudi',
           title: 'Bin hier Zuhause',
           path: '../assets/09 Ludwigs Steirische Gaudi - Bin hier Zuhause (ID 02).mp3'
       },
       {
-          id: "9",
+          id: 9,
           artist: 'lobo Loco',
           title: 'Old River Boat',
           path: '../assets/10 Lobo Loco - Old River Boat (ID 1368).mp3'
       },
       {
-          id: "10",
+          id: 10,
           artist: 'Xylo-Ziko',
           title: 'peril',
           path: '../assets/11 Xylo-Ziko - peril.mp3'
       },
       {
-          id: "11",
+          id: 11,
           artist: 'Crowander',
           title: 'Humbug',
           path: '../assets/12 Crowander - Humbug.mp3'
       },
       {
-          id: "12",
+          id: 12,
           artist: 'Marcos H. Bolanos',
           title: 'Rain-Soaked Window',
           path: '../assets/13 Marcos H. Bolanos - Rain-Soaked Window.mp3'
       },
       {
-          id: "13",
+          id: 13,
           artist: 'Robert John',
           title: 'Surface',
           path: '../assets/14 Robert John - Surface.mp3'
       },
       {
-          id: "14",
+          id: 14,
           artist: 'Monolog Rockstars',
           title: 'At the Restaurant',
           path: '../assets/15 Monolog Rockstars - At The Restaurant.mp3'
@@ -106,16 +105,14 @@ function Home() {
       <div className='storageBoxText' key={song.id} value={song.path} onClick={() => {
         enqueue( array => [...array, song]);
         setSongTitle(song.title);
-        setSongArtist(song.artist);
-        setSongPath(song.path);
+        setSongID(song.id)
       }}>
         {song.artist} - {song.title}
       </div>); 
   });
 
-  let [songPath, setSongPath] = useState(songs[0].path);
+  let [songID, setSongID] = useState(songs[0].id);
   let [songTitle, setSongTitle] = useState(songs[0].title);
-  let [songArtist, setSongArtist] = useState(songs[0].artist);
   let [queue, enqueue] = useState([]);
 
   return (
@@ -142,7 +139,7 @@ function Home() {
         </div>
 
         <div className="footer">
-        <AudioPlayer playlist={queue} songPath={songPath} songTitle={songTitle} songArtist={songArtist}/>
+        <AudioPlayer playlist={queue} songID={songID} songTitle={songTitle} />
         </div>
 
         <style>{'body { background-color: #100F0F; }'}</style>
