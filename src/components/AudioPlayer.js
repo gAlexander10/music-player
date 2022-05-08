@@ -71,7 +71,7 @@ function AudioPlayer(props) {
         }}/>
       <div className="audioMiddle">
         <audio controls> 
-          <source src={songsList.at(index)} type="audio/mp3"/>
+          <source src={songsList[2]} type="audio/mp3"/>
           Your browser does not support the audio element.
         </audio>
       </div>
