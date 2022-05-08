@@ -10,7 +10,7 @@
 ```
 ---
 
-### Team Memebers
+### Team Memembers
 * Tyler Adam Martinez
 * Alex Martinez
 * Cambry King
@@ -21,10 +21,10 @@
 
 #### Alex Martinez
 * Build User Interface
-* ScrumMaster
+* Scrumb Master
 
 #### Cambry King
-* Display the Queue to the screen
+* Display My Queue
 
 
 ---
@@ -46,5 +46,5 @@
 * Double linked list, and single linked list
 
 #### Things that you know are not working correctly.
-* The Audio player can not switch between sources
+* The Audio Player does not play the correct audio file. 
 
