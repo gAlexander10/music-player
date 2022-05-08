@@ -4,7 +4,7 @@
 ### Class Info
  ```json
 
-  "class": "CSCE3110",
+  "class: CSCE3110",
   "team name": ["Tyler Adam Martinez", "Alex Martinez", "Cambry King"],
 
 ```
@@ -33,11 +33,12 @@
 * Node.js
 * create-react-app
 
-### Hold to run the project
+### How to run the project
 1. Go to the project's root directory
 2. Run the terminal command: `npm start`
 3. Go to your default web browser
 4. Open [http://localhost:3000](http://localhost:3000) to view the project in your default web browser
+5. A song will start up as soon as the program begins to run. To play another song, first select the song of choice to add it to the queue. Then press the right button to advance to the next song. 
 
 ---
 
