@@ -4,8 +4,8 @@
 ### Class Info
  ```json
 
-  "Class: CSCE3110",
-  "Team Name: [Tyler Adam Martinez, Alex Martinez, Cambry King]",
+  "Class: CSCE3110"
+  "Team Name: [Tyler Adam Martinez, Alex Martinez, Cambry King]"
 
 ```
 ---
