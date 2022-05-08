@@ -2,7 +2,11 @@ import React from 'react';
 import '../styles/homestyle.css'
 import Playlist from '../data_structures/playlist'
 
+<<<<<<< HEAD
 let songs = [
+=======
+export let songs = [
+>>>>>>> queue
     {
         id: 0,
         artist: 'Voodoo Suite',
@@ -94,6 +98,7 @@ let songs = [
         path: '../assets/15 Monolog Rockstars - At The Restaurant.mp3'
     }
 ]
+<<<<<<< HEAD
 
 function SongList(){
 
@@ -115,3 +120,13 @@ function SongList(){
 
 export default SongList;
 export {songs};
+=======
+ 
+
+function SongList(){
+   const songList = songs.map(song => (<div className='storageBoxText' key={song.id} value={song.path}>{song.artist} - {song.title}</div>))
+    return (<div>{songList}</div>)
+}
+
+export default SongList;
+>>>>>>> queue

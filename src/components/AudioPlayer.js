@@ -1,53 +1,93 @@
-import React,{ useState, useRef, useEffect} from 'react';
-import { TiMediaRewind, TiMediaFastForward } from 'react-icons/ti';
+import { TiMediaRewind, TiMediaFastForward, TiMediaPlay, TiMediaPause } from 'react-icons/ti';
+import { useState, useEffect, useRef } from 'react';
 import '../styles/audioplayer.css';
-import song from '../assets/Test.mp3';
-import Playlist from '../data_structures/playlist';
-import songs from './Songs'
+import song0 from '../assets/01 Voodoo Suite - Little Grass Shack.mp3';
+import song1 from '../assets/02 Ken Hamm - Buckbreak.mp3';
+import song2 from '../assets/03 The Trumpeteers - Little Wooden Church.mp3';
+import song3 from '../assets/04 Jackson F. Smith - Cantina Rag.mp3';
+import song4 from '../assets/05 Studio Noir - Our Little Hearts Like Saturn.mp3';
+import song5 from '../assets/06 Teddy and Marge - Dark Eyes.mp3';
+import song6 from '../assets/07 HR Jothipala - Ran Eta Pota Ridee Hawadi.mp3';
+import song7 from '../assets/08 The Anchorites - Kingsfold(untrad.).mp3';
+import song8 from '../assets/09 Ludwigs Steirische Gaudi - Bin hier Zuhause (ID 02).mp3';
+import song9 from '../assets/10 Lobo Loco - Old River Boat (ID 1368).mp3';
+import song10 from '../assets/11 Xylo-Ziko - peril.mp3';
+import song11 from '../assets/12 Crowander - Humbug.mp3';
+import song12 from '../assets/13 Marcos H. Bolanos - Rain-Soaked Window.mp3';
+import song13 from '../assets/14 Robert John - Surface.mp3';
+import song14 from '../assets/15 Monolog Rockstars - At The Restaurant.mp3';
 
-function AudioPlayer() {
- 
-  const [songName, setSongName] = useState('Song Name')
-  const [index, setIndex] = useState(0)
-  
-  const Previous = () => {
-    // 1. Make the previous song the current song in the linked list -- Playlist.prev
-    Playlist.prev();
-    // 2. Push previous Song onto Stack --  Push(id)
-    console.log('Previous Button Has been pushed');
+function AudioPlayerComponent(props) {
+  let songsList = [
+    song0,
+    song1,
+    song2,
+    song3,
+    song4,
+    song5,
+    song6,
+    song7,
+    song8,
+    song9,
+    song10,
+    song11,
+    song12,
+    song13,
+    song14
+  ];
+
+
+  let [songTitle, setSongTitle] = useState(props.songTitle);
+
+  let [index, setIndex] = useState(0);
+  useEffect(() => {
+    if (index > props.playlist.length -1) {
+      setIndex(0);
+    } else if (index < 0) {
+      setIndex(props.playlist.length - 1);
+    }
+  }, [index, props.playlist.length]);
+
+  let [source, setSource] = useState(songsList[0]);
+  let myAudio = useRef(new Audio());
+
+  const updateSong = (source) => {
+    if(myAudio.current){
+      myAudio.current.pause();
+      myAudio.current = new Audio(source);
+      myAudio.current.load();
+      myAudio.current.play();
+    }
   }
 
-  const Next = () =>{ 
-    // 1. Make the next song the current song in the linked list -- Playlist.next
-    Playlist.next();
-    // 2. Push next Song onto Stack --  Push(id)
-    console.log('Next Button Has been pushed');
-  }
+  useEffect(() => {
+    setSource(songsList.at(index));
+    updateSong(source)
+  }, [index, songsList, source, props.playlist]);
 
   return (
-    <div>
-      <div className="audioPlayerContainer">
-        
-        <div className="abovePlayer">
-          
-          <TiMediaRewind onClick={Previous} className="leftArrow"/>
-
+  <div>
+    <div className="audioPlayerContainer">
+      <div className="abovePlayer">
+        <TiMediaRewind className="leftArrow" onClick={() => { 
+          setIndex(index - 1);
+          setSongTitle(props.playlist.at(index).title);
+        }} />
           <div className="currentSong">
-          {songName}
+            { songTitle }
           </div>
-
-          <TiMediaFastForward onClick={Next} className="rightArrow"/>
-
+        <TiMediaFastForward className="rightArrow" onClick={() => { 
+          setIndex(index + 1);
+          setSongTitle(props.playlist.at(index).title);
+        }}/>
         <div className="audioMiddle">
-          <audio controls autoPlay>
-            <source src={song} type="audio/mp3"/>
-          </audio>
-        </div>
-        
+          <TiMediaPlay className="leftArrow" onClick={() => {myAudio.current.play()}}/>
+          <TiMediaPause className="rightArrow" onClick={() => {myAudio.current.pause()}}/>
         </div>
       </div>
     </div>
+  </div>
   );
 }
 
-export default AudioPlayer;
+export default AudioPlayerComponent;
