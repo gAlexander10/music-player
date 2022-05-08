@@ -1,4 +1,4 @@
-import { TiMediaRewind, TiMediaFastForward, TiRefresh } from 'react-icons/ti';
+import { TiMediaRewind, TiMediaFastForward,TiMediaPlay, TiMediaPause } from 'react-icons/ti';
 import { useState, useEffect, useRef } from 'react';
 import '../styles/audioplayer.css';
 import song0 from '../assets/01 Voodoo Suite - Little Grass Shack.mp3';
