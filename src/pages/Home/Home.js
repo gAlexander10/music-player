@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
-import AudioPlayer from '../../components/AudioPlayer';
+import AudioPlayerComponent from '../../components/AudioPlayer';
 import RecentlyPlayed from './RecentlyPlayed';
 import '../../styles/homestyle.css';
 
@@ -139,7 +139,7 @@ function Home() {
         </div>
 
         <div className="footer">
-        <AudioPlayer playlist={queue} songID={songID} songTitle={songTitle} />
+        <AudioPlayerComponent playlist={queue} songID={songID} songTitle={songTitle} />
         </div>
 
         <style>{'body { background-color: #100F0F; }'}</style>
