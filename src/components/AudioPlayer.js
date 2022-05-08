@@ -1,4 +1,4 @@
-import { TiMediaRewind, TiMediaFastForward,TiMediaPlay, TiMediaPause } from 'react-icons/ti';
+import { TiMediaRewind, TiMediaFastForward, TiMediaPlay, TiMediaPause } from 'react-icons/ti';
 import { useState, useEffect, useRef } from 'react';
 import '../styles/audioplayer.css';
 import song0 from '../assets/01 Voodoo Suite - Little Grass Shack.mp3';
@@ -90,10 +90,8 @@ function AudioPlayerComponent(props) {
           console.log(source);
         }}/>
         <div className="audioMiddle">
-          <audio controls>
-            <source src={source} type="audio/mp3" />
-            Your browser does not support the audio tag.
-          </audio>
+          <TiMediaPlay className="leftArrow" onClick={() => {myAudio.current.play()}}/>
+          <TiMediaPause className="rightArrow" onClick={() => {myAudio.current.pause()}}/>
         </div>
       </div>
     </div>
