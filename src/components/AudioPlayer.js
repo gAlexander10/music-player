@@ -53,7 +53,6 @@ function AudioPlayerComponent(props) {
 
   const updateSong = (source) => {
     if(myAudio.current){
-      console.log("here...jfkdls")
       myAudio.current.pause();
       myAudio.current = new Audio(source);
       myAudio.current.load();
@@ -62,32 +61,24 @@ function AudioPlayerComponent(props) {
   }
 
   useEffect(() => {
-    setSource(songsList.at(index))
+    setSource(songsList.at(index));
     updateSong(source)
-  }, [index, songsList, source]);
+  }, [index, songsList, source, props.playlist]);
 
   return (
   <div>
     <div className="audioPlayerContainer">
       <div className="abovePlayer">
         <TiMediaRewind className="leftArrow" onClick={() => { 
-          console.log(props.playlist);
           setIndex(index - 1);
-          console.log(index);
-          console.log(props.playlist.at(index).title);
           setSongTitle(props.playlist.at(index).title);
-          console.log(source);
         }} />
           <div className="currentSong">
             { songTitle }
           </div>
         <TiMediaFastForward className="rightArrow" onClick={() => { 
-          console.log(props.playlist);
           setIndex(index + 1);
-          console.log(index);
-          console.log(props.playlist.at(index).title);
           setSongTitle(props.playlist.at(index).title);
-          console.log(source);
         }}/>
         <div className="audioMiddle">
           <TiMediaPlay className="leftArrow" onClick={() => {myAudio.current.play()}}/>
