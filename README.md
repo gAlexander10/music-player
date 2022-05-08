@@ -5,7 +5,7 @@
  ```json
 {
   "class": "CSCE3110",
-  "team name": "N/A",
+  "team name": ["Tyler Adam Martinez", "Alex Martinez", "Cambry King"],
 }
 ```
 ---
@@ -17,13 +17,14 @@
 
 ### Responsibilities Listed
 #### Tyler Adam Martinez
-* pt
+* Circular Queue Implementation
 
 #### Alex Martinez
 * Build User Interface
+* SrumbMaster
 
 #### Cambry King
-* pt
+* Display the Queue to the screen
 
 
 ---
@@ -42,8 +43,8 @@
 
 ### Known Bugs or Problems
 #### A list of any features that you did not implement
-* N/A
+* Double linked list, and single linked list
 
 #### Things that you know are not working correctly.
-* N/A
+* The Audio player can not switch between sources
 
