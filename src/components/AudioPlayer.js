@@ -36,17 +36,16 @@ function AudioPlayerComponent(props) {
     song14
   ];
 
-
-  let [songTitle, setSongTitle] = useState(props.songTitle);
-
+  let [songTitle, setSongTitle] = useState("");
+  let [songID, setSongID] = useState(0);
   let [index, setIndex] = useState(0);
   useEffect(() => {
-    if (index > props.playlist.length -1) {
+    if (index > props.songIDs.length -1) {
       setIndex(0);
     } else if (index < 0) {
-      setIndex(props.playlist.length - 1);
+      setIndex(props.songIDs.length - 1);
     }
-  }, [index, props.playlist.length]);
+  }, [index, props.songIDs.length]);
 
   let [source, setSource] = useState(songsList[0]);
   let myAudio = useRef(new Audio());
@@ -61,9 +60,11 @@ function AudioPlayerComponent(props) {
   }
 
   useEffect(() => {
-    setSource(songsList.at(index));
+    setSongID(props.songIDs.at(index));
+    setSongTitle(props.songTitles.at(index));
+    setSource(songsList.at(songID));
     updateSong(source)
-  }, [index, songsList, source, props.playlist]);
+  }, [index, songID, songTitle, songsList, source, props.songIDs, props.songTitles]);
 
   return (
   <div>
@@ -71,14 +72,12 @@ function AudioPlayerComponent(props) {
       <div className="abovePlayer">
         <TiMediaRewind className="leftArrow" onClick={() => { 
           setIndex(index - 1);
-          setSongTitle(props.playlist.at(index).title);
         }} />
           <div className="currentSong">
             { songTitle }
           </div>
         <TiMediaFastForward className="rightArrow" onClick={() => { 
           setIndex(index + 1);
-          setSongTitle(props.playlist.at(index).title);
         }}/>
         <div className="audioMiddle">
           <TiMediaPlay className="leftArrow" onClick={() => {myAudio.current.play()}}/>

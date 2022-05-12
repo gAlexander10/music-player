@@ -104,15 +104,15 @@ function Home() {
     return( 
       <div className='storageBoxText' key={song.id} value={song.path} onClick={() => {
         enqueue( array => [...array, song]);
-        setSongTitle(song.title);
-        setSongID(song.id)
+        setSongTitles( array => [...array, song.title]);
+        setSongIDs(array => [...array, song.id]);
       }}>
         {song.artist} - {song.title}
       </div>); 
   });
 
-  let [songID, setSongID] = useState(songs[0].id);
-  let [songTitle, setSongTitle] = useState(songs[0].title);
+  let [songIDs, setSongIDs] = useState([]);
+  let [songTitles, setSongTitles] = useState([]);
   let [queue, enqueue] = useState([]);
 
   return (
@@ -139,7 +139,7 @@ function Home() {
         </div>
 
         <div className="footer">
-        <AudioPlayerComponent playlist={queue} songID={songID} songTitle={songTitle} />
+        <AudioPlayerComponent songIDs={songIDs} songTitles={songTitles} />
         </div>
 
         <style>{'body { background-color: #100F0F; }'}</style>
